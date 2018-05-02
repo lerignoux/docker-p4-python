@@ -3,6 +3,8 @@ MAINTAINER Erignoux Laurent <laurent.erignoux@ubisoft.com>
 
 RUN apk update && apk add --no-cache bash curl git python python-dev py-pip openssl openssl-dev build-base
 
+ADD bin/lib-x64.tgz /
+
 ENV VISUAL=vi
 ENV P4_VERSION 16.2
 
