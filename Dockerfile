@@ -13,5 +13,4 @@ RUN pip install --upgrade pip p4python
 WORKDIR /home
 COPY ./ /home/
 
-ENTRYPOINT ["/home/entrypoint.sh"]
 CMD ["python"]
