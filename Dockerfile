@@ -12,7 +12,7 @@ RUN curl -sSL -O http://cdist2.perforce.com/perforce/r${P4_VERSION}/bin.linux26x
 
 RUN pip install --upgrade pip p4python
 
-WORKDIR /home
-COPY ./ /home/
+COPY ./ /app/
+WORKDIR /app
 
 CMD ["python"]
