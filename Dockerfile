@@ -1,6 +1,7 @@
-FROM alpine:3.7
-MAINTAINER Erignoux Laurent <laurent.erignoux@ubisoft.com>
+FROM python:3.7-alpine
+MAINTAINER Erignoux Laurent "laurent.erignoux@ubisoft.com"
 
+## Adding Perforce to the container ##
 RUN apk update && apk add --no-cache bash curl git python python-dev py-pip openssl openssl-dev build-base
 
 ADD bin/lib-x64.tgz /
@@ -12,7 +13,12 @@ RUN curl -sSL -O http://cdist2.perforce.com/perforce/r${P4_VERSION}/bin.linux26x
 
 RUN pip install --upgrade pip p4python
 
-WORKDIR /home
-COPY ./ /home/
+## End perforce requirements ##
 
-CMD ["python"]
+COPY . /app
+WORKDIR /app
+
+RUN pip install -r requirements.txt
+
+ENTRYPOINT ["python"]
+CMD ["app.py"]
