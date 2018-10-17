@@ -18,5 +18,4 @@ RUN pip install --upgrade pip p4python
 COPY . /app
 WORKDIR /app
 
-ENTRYPOINT ["python"]
 CMD ["app.py"]
