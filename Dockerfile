@@ -18,4 +18,4 @@ RUN pip install --upgrade pip p4python
 COPY . /app
 WORKDIR /app
 
-CMD ["app.py"]
+CMD ["python"]
