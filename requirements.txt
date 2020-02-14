@@ -1,0 +1,4 @@
+requests>=2.19
+openpyxl>=2.5
+aiohttp>=3.4
+pillow>=5.3

@@ -20,7 +20,6 @@ RUN pip3 install --upgrade p4python
 COPY . /app
 WORKDIR /app
 
-RUN pip install -r requirements.txt
+RUN pip install --upgrade -r requirements.txt
 
-ENTRYPOINT ["python"]
-CMD ["app.py"]
+CMD ["python"]
