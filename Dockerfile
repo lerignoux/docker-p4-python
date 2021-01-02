@@ -1,19 +1,22 @@
-FROM alpine:3.7
+FROM debian:stable-slim
 MAINTAINER Erignoux Laurent "lerignoux@gmail.com"
 
 ## Adding Perforce to the container ##
-RUN apk update && apk add --no-cache bash curl git python python-dev py-pip openssl openssl-dev build-base
+RUN apt-get update && apt-get -y install bash curl git python3 python3-dev python3-pip openssl
 
-ADD bin/lib-x64.tgz /
+# ADD bin/lib-x64.tgz /
 
 ENV VISUAL=vi
-ENV P4_VERSION 16.2
+ENV P4_VERSION 19.2
 
 RUN curl -sSL -O http://cdist2.perforce.com/perforce/r${P4_VERSION}/bin.linux26x86_64/p4 && mv p4 /usr/bin/p4 && chmod +x /usr/bin/p4
 
-RUN pip install --upgrade pip p4python
+RUN pip3 install --upgrade pip setuptools wheel
+RUN pip3 install --upgrade p4python
 
 ## End perforce requirements ##
+
+RUN pip install requests openpyxl aiohttp pillow
 
 COPY . /app
 WORKDIR /app
