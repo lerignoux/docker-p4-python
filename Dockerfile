@@ -1,5 +1,5 @@
 FROM python:3.7-alpine
-MAINTAINER Erignoux Laurent "laurent.erignoux@ubisoft.com"
+LABEL org.opencontainers.image.authors="laurent.erignoux@ubisoft.com"
 
 ## Adding Perforce to the container ##
 RUN apk update && apk add --no-cache bash curl git python3 python3-dev py-pip openssl openssl-dev build-base
