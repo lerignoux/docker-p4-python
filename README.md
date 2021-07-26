@@ -1,5 +1,5 @@
 # docker-p4-python
-A container to have both python and perforce in an alpine container
+A container to have both python and perforce in a container
 
 ## Env variables:
 P4PORT: the perforce server
