@@ -27,4 +27,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/p4-python:${{ env.RELEASE_VERSION }}
+          tags: lerignoux/p4-python:${{ env.RELEASE_VERSION }}
