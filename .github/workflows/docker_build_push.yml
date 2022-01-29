@@ -28,6 +28,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
+          images: lerignoux/p4-python
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
