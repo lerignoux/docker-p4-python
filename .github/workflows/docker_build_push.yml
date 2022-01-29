@@ -18,18 +18,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v2
-        with:
-          images: lerignoux/p4-python
-
       - name: Build and push Docker image
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          images: lerignoux/p4-python
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/p4-python:VERSION::${GITHUB_REF/refs\/tags\//}
