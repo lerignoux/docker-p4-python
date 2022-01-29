@@ -1,5 +1,5 @@
 # docker-p4-python
- container with both python and perforce  
+Container with both python and perforce  
 
 Prefer using the container `lerignoux/p4-python` instead of `lerignoux/docker-p4-python` Hopefully we can remove it one day.  
 
